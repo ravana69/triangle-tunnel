@@ -1,0 +1,72 @@
+$c: #e00 #f60 #fa0 #ee2 #9e2 #2a2 #8cf #48f #62c #808;
+$d: 2s;
+
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+main {
+	font-size: 100px;
+	margin: auto;
+	height: 5em;
+	width: 5em;
+	overflow: hidden;
+}
+.container {
+	position: relative;
+	transform-style: preserve-3d;
+}
+.triangle {
+	animation: triMove $d linear infinite;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 5em);
+	height: 8.66em;
+	width: 10em;
+	transform-origin: center top;
+	will-change: transform;
+}
+.inner {
+	border-right: 5em solid transparent;
+	border-bottom: 8.66em solid;
+	border-left: 5em solid transparent;
+	width: 0;
+	height: 0;
+}
+/* Color and position triangular rings */
+$cCount: length($c);
+@for $i from 1 through $cCount {
+	.triangle:nth-of-type(#{$cCount}n + #{$i}) .inner {
+		border-bottom-color: nth($c, $i);
+	}
+}
+@for $j from 1 through 20 {
+	.triangle:nth-of-type(#{$j}) {
+		animation-delay: 0s - ($d * 1/20 * ($j - 1));
+	}
+}
+/* Animations */
+@keyframes triMove {
+	from {transform: translate3d(0,1.25em,0px) scale(0,0)}
+	5% {transform: translate3d(0,1.25em,-1px) scale(0.01,0.01)}
+	10% {transform: translate3d(0,1.25em,-2px) scale(0.03,0.03)}
+	15% {transform: translate3d(0,1.25em,-3px) scale(0.05,0.05)}
+	20% {transform: translate3d(0,1.25em,-4px) scale(0.07,0.07)}
+	25% {transform: translate3d(0,1.25em,-5px) scale(0.09,0.09)}
+	30% {transform: translate3d(0,1.25em,-6px) scale(0.11,0.11)}
+	35% {transform: translate3d(0,1.25em,-7px) scale(0.13,0.13)}
+	40% {transform: translate3d(0,1.25em,-8px) scale(0.15,0.15)}
+	45% {transform: translate3d(0,1.25em,-9px) scale(0.17,0.17)}
+	50% {transform: translate3d(0,1.25em,-10px) scale(0.19,0.19)}
+	55% {transform: translate3d(0,1.25em,-11px) scale(0.213,0.21)}
+	60% {transform: translate3d(0,1.2em,-12px) scale(0.24,0.237)}
+	65% {transform: translate3d(0,1.1em,-13px) scale(0.275,0.27)}
+	70% {transform: translate3d(0,0.93em,-14px) scale(0.32,0.315)}
+	75% {transform: translate3d(0,0.65em,-15px) scale(0.4,0.375)}
+	80% {transform: translate3d(0,0.2em,-16px) scale(0.53,0.455)}
+	85% {transform: translate3d(0,-0.5em,-17px) scale(0.75,0.585)}
+	90% {transform: translate3d(0,-1.8em,-18px) scale(1.4,0.9)}
+	95% {transform: translate3d(0,-2.7em,-19px) scale(2,1.2)}
+	to {transform: translate3d(0,-3.1em,-20px) scale(2.4,1.4)}
+}

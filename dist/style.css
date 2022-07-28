@@ -1,0 +1,225 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  font-size: 100px;
+  margin: auto;
+  height: 5em;
+  width: 5em;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.triangle {
+  animation: triMove 2s linear infinite;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 5em);
+  height: 8.66em;
+  width: 10em;
+  transform-origin: center top;
+  will-change: transform;
+}
+
+.inner {
+  border-right: 5em solid transparent;
+  border-bottom: 8.66em solid;
+  border-left: 5em solid transparent;
+  width: 0;
+  height: 0;
+}
+
+/* Color and position triangular rings */
+.triangle:nth-of-type(10n + 1) .inner {
+  border-bottom-color: #e00;
+}
+
+.triangle:nth-of-type(10n + 2) .inner {
+  border-bottom-color: #f60;
+}
+
+.triangle:nth-of-type(10n + 3) .inner {
+  border-bottom-color: #fa0;
+}
+
+.triangle:nth-of-type(10n + 4) .inner {
+  border-bottom-color: #ee2;
+}
+
+.triangle:nth-of-type(10n + 5) .inner {
+  border-bottom-color: #9e2;
+}
+
+.triangle:nth-of-type(10n + 6) .inner {
+  border-bottom-color: #2a2;
+}
+
+.triangle:nth-of-type(10n + 7) .inner {
+  border-bottom-color: #8cf;
+}
+
+.triangle:nth-of-type(10n + 8) .inner {
+  border-bottom-color: #48f;
+}
+
+.triangle:nth-of-type(10n + 9) .inner {
+  border-bottom-color: #62c;
+}
+
+.triangle:nth-of-type(10n + 10) .inner {
+  border-bottom-color: #808;
+}
+
+.triangle:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.triangle:nth-of-type(2) {
+  animation-delay: -0.1s;
+}
+
+.triangle:nth-of-type(3) {
+  animation-delay: -0.2s;
+}
+
+.triangle:nth-of-type(4) {
+  animation-delay: -0.3s;
+}
+
+.triangle:nth-of-type(5) {
+  animation-delay: -0.4s;
+}
+
+.triangle:nth-of-type(6) {
+  animation-delay: -0.5s;
+}
+
+.triangle:nth-of-type(7) {
+  animation-delay: -0.6s;
+}
+
+.triangle:nth-of-type(8) {
+  animation-delay: -0.7s;
+}
+
+.triangle:nth-of-type(9) {
+  animation-delay: -0.8s;
+}
+
+.triangle:nth-of-type(10) {
+  animation-delay: -0.9s;
+}
+
+.triangle:nth-of-type(11) {
+  animation-delay: -1s;
+}
+
+.triangle:nth-of-type(12) {
+  animation-delay: -1.1s;
+}
+
+.triangle:nth-of-type(13) {
+  animation-delay: -1.2s;
+}
+
+.triangle:nth-of-type(14) {
+  animation-delay: -1.3s;
+}
+
+.triangle:nth-of-type(15) {
+  animation-delay: -1.4s;
+}
+
+.triangle:nth-of-type(16) {
+  animation-delay: -1.5s;
+}
+
+.triangle:nth-of-type(17) {
+  animation-delay: -1.6s;
+}
+
+.triangle:nth-of-type(18) {
+  animation-delay: -1.7s;
+}
+
+.triangle:nth-of-type(19) {
+  animation-delay: -1.8s;
+}
+
+.triangle:nth-of-type(20) {
+  animation-delay: -1.9s;
+}
+
+/* Animations */
+@keyframes triMove {
+  from {
+    transform: translate3d(0, 1.25em, 0px) scale(0, 0);
+  }
+  5% {
+    transform: translate3d(0, 1.25em, -1px) scale(0.01, 0.01);
+  }
+  10% {
+    transform: translate3d(0, 1.25em, -2px) scale(0.03, 0.03);
+  }
+  15% {
+    transform: translate3d(0, 1.25em, -3px) scale(0.05, 0.05);
+  }
+  20% {
+    transform: translate3d(0, 1.25em, -4px) scale(0.07, 0.07);
+  }
+  25% {
+    transform: translate3d(0, 1.25em, -5px) scale(0.09, 0.09);
+  }
+  30% {
+    transform: translate3d(0, 1.25em, -6px) scale(0.11, 0.11);
+  }
+  35% {
+    transform: translate3d(0, 1.25em, -7px) scale(0.13, 0.13);
+  }
+  40% {
+    transform: translate3d(0, 1.25em, -8px) scale(0.15, 0.15);
+  }
+  45% {
+    transform: translate3d(0, 1.25em, -9px) scale(0.17, 0.17);
+  }
+  50% {
+    transform: translate3d(0, 1.25em, -10px) scale(0.19, 0.19);
+  }
+  55% {
+    transform: translate3d(0, 1.25em, -11px) scale(0.213, 0.21);
+  }
+  60% {
+    transform: translate3d(0, 1.2em, -12px) scale(0.24, 0.237);
+  }
+  65% {
+    transform: translate3d(0, 1.1em, -13px) scale(0.275, 0.27);
+  }
+  70% {
+    transform: translate3d(0, 0.93em, -14px) scale(0.32, 0.315);
+  }
+  75% {
+    transform: translate3d(0, 0.65em, -15px) scale(0.4, 0.375);
+  }
+  80% {
+    transform: translate3d(0, 0.2em, -16px) scale(0.53, 0.455);
+  }
+  85% {
+    transform: translate3d(0, -0.5em, -17px) scale(0.75, 0.585);
+  }
+  90% {
+    transform: translate3d(0, -1.8em, -18px) scale(1.4, 0.9);
+  }
+  95% {
+    transform: translate3d(0, -2.7em, -19px) scale(2, 1.2);
+  }
+  to {
+    transform: translate3d(0, -3.1em, -20px) scale(2.4, 1.4);
+  }
+}
